@@ -1,0 +1,57 @@
+<div id="container" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+  <div id="header">
+    <div id="header-sub">
+      <table border="0" ><tr><td class="tytul">Prosty blog w Ruby on Rails</td></tr></table>
+    </div> <!--end header-sub-->
+  </div> <!--end header-->
+  <div id="banner">
+    <div id="banner-sub">
+    </div> <!--end banner-sub-->
+  </div> <!--end banner-->
+  <div id="content">
+    <div id="sidebar1">
+      <table class="btn2"><tr><td>
+      <p class="posttytul"><%= @post.title %></p>
+        <div class="btn-small"><%= @post.created_at %></div>
+
+      <%= @post.text %>
+
+        <p class="posttytul">Komentarze</p>
+
+      <span class="btn2">
+        <% @post.comments.each do |comment| %>
+          <div class="btn-small"><%= comment.created_at %></div>
+          <div class="btn2"><%= comment.text %></div>
+            <p><div class="btn"><%= link_to "Usuń komentarz", [@post, comment], :method => :delete, :confirm => "Napewno?" %></div></p>
+        <% end %>
+      </span>
+
+      <%= form_for [@post, @post.comments.build] do |f| %>
+          <p><%= f.text_area :text, :size => '100x3' %></p>
+          <p"><%= f.submit "Dodaj komentarz" %></p>
+      <% end %>
+
+      <p>
+        <div class="btn"><%= link_to "Powrót", posts_path %></div>
+
+        <div class="btn"><%= link_to "Edycja", edit_post_path(@post) %></div>
+
+        <div class="btn"><%= link_to "Usuń", @post, :method => :delete, :confirm => "Napewno?" %></div>
+      </p>
+      </td></tr></table>
+    </div> <!--end sidebar1-->
+  </div> <!--end content-->
+  <div id="footer">
+    <div id="footer-sub-top">
+      <div id="footer-sub">
+        <table>
+          <tr><td class="stopka">Prosty blog w Ruby on Rails, jdarecki</td></tr></table>
+      </div>
+    </div> <!--end footer-sub-->
+  </div> <!--end footer-->
+</div> <!--end contaier-->
+
+
+
+
+

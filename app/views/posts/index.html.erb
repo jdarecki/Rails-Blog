@@ -1,0 +1,35 @@
+<!-- <link href="posts.css" rel="stylesheet" type="text/css" />-->
+<div id="container">
+	<div id="header">
+    	<div id="header-sub">
+        	<table border="0" ><tr><td class="tytul">Prosty blog w Ruby on Rails</td></tr></table>
+      </div> <!--end header-sub-->
+    </div> <!--end header-->
+    <div id="banner">
+    	<div id="banner-sub">
+        </div> <!--end banner-sub-->
+    </div> <!--end banner-->
+    <div id="content">
+    	<div id="sidebar1">
+        	<% @posts.each do |post| %>
+            <p>
+			  <table class="btn">
+			    <tr><td><span class="posttytul"><%= link_to post.title, post %></span>
+			  	<div class="btn-small"><%= post.created_at %></div>
+			  	<table class="btn2"><tr><td><%= post.text %></td></tr></table>
+              </td></tr></table>
+            </p>  
+			<% end %> 
+		  <table class="btn btn-primary btn-large"><tr><td><%= link_to "Nowy post", new_post_path %></td></tr></table>
+        </div> <!--end sidebar1-->
+  </div> <!--end content-->
+    <div id="footer">
+    	<div id="footer-sub-top">
+    		<div id="footer-sub">
+ 				<table>
+ 				  <tr><td class="stopka">Prosty blog w Ruby on Rails, jdarecki</td></tr></table>
+            </div>
+        </div> <!--end footer-sub-->
+    </div> <!--end footer-->
+</div> <!--end contaier-->
+

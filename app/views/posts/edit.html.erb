@@ -1,0 +1,33 @@
+<div id="container">
+  <div id="header">
+    <div id="header-sub">
+      <table border="0" ><tr><td class="tytul">Prosty blog w Ruby on Rails</td></tr></table>
+    </div> <!--end header-sub-->
+  </div> <!--end header-->
+  <div id="banner">
+    <div id="banner-sub">
+    </div> <!--end banner-sub-->
+  </div> <!--end banner-->
+  <div id="content">
+    <div id="sidebar1">
+      <table class="btn-info"><tr><td>
+        <h1>Edycja</h1>
+
+        <%= render 'form' %>
+
+        <div class="btn"><%= link_to 'Pokaż', @post %></div>
+        <div class="btn"><%= link_to 'Powrót', posts_path %></div>
+      </td></tr></table>
+    </div> <!--end sidebar1-->
+  </div> <!--end content-->
+  <div id="footer">
+    <div id="footer-sub-top">
+      <div id="footer-sub">
+        <table>
+          <tr><td class="stopka">Prosty blog w Ruby on Rails, jdarecki</td></tr></table>
+      </div>
+    </div> <!--end footer-sub-->
+  </div> <!--end footer-->
+</div> <!--end contaier-->
+
+
